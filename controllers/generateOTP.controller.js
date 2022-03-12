@@ -12,7 +12,7 @@ const twilioCreds = {
    
     serviceID: "VA65f6e3eb99ff24dd71e5032ec24b1a20",
     accountSID: "ACc43eae8b582b8cdfcbf03d8e1186aaf4",
-    authToken: "fe09117323879303465b5d3c431824e4",
+    authToken: "fe09117323879303465b5d3c431824e4"
 
 }
 var phno = ''
