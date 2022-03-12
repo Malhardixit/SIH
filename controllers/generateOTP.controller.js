@@ -10,10 +10,13 @@ const twilioCreds = {
     // accountSID : "ACcdf6fd924cd03835b7d9e3f39fa5928e",
     // authToken : "08c102981fc01e08c5ed4873328069d4"
    
-    serviceID: "VA65f6e3eb99ff24dd71e5032ec24b1a20",
-    accountSID: "ACc43eae8b582b8cdfcbf03d8e1186aaf4",
-    authToken: "fe09117323879303465b5d3c431824e4"
+    // serviceID: "VA65f6e3eb99ff24dd71e5032ec24b1a20",
+    // accountSID: "ACc43eae8b582b8cdfcbf03d8e1186aaf4",
+    // authToken: "fe09117323879303465b5d3c431824e4"
 
+    serviceID: "VAa20b80ccd51469c56974464e55cb6191",
+    accountSID: "AC8b01869c1d0419cedc19244ffadac037",
+    authToken: "8f005b8942703dd91bb6a0b25c7dea04"
 }
 var phno = ''
 function generateOTP(req,res){
