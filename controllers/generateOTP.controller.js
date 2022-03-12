@@ -14,11 +14,12 @@ const twilioCreds = {
     // accountSID: "ACc43eae8b582b8cdfcbf03d8e1186aaf4",
     // authToken: "fe09117323879303465b5d3c431824e4"
 
+    
     serviceID: "VAa20b80ccd51469c56974464e55cb6191",
     accountSID: "AC8b01869c1d0419cedc19244ffadac037",
     authToken: "8f005b8942703dd91bb6a0b25c7dea04"
 }
-var phno = ''
+var phNo = ''
 function generateOTP(req,res){
     const client = twilio(twilioCreds.accountSID,twilioCreds.authToken)
     if(!req.query.phoneNumber){
@@ -26,7 +27,7 @@ function generateOTP(req,res){
     }
     else{
         const phoneNumber = req.query.phoneNumber
-        phno = req.query.phoneNumber
+        phNo = req.query.phoneNumber
         client.verify.services(twilioCreds.serviceID).verifications.create(
             {
                 to:`+91${phoneNumber}`,
@@ -48,10 +49,10 @@ async function verifyOTP(req,res){
     }
     else{
         const OTPverification_response = await client.verify.services(twilioCreds.serviceID).verificationChecks.create({
-            to: `+91${phno}`,
+            to: `+91${phNo}`,
             code:`${req.query.code}`
         })
-        const citizenArray = await firebaseApp.firestore().collection('Citizen').where('PhNo','==',phno).get()
+        const citizenArray = await firebaseApp.firestore().collection('Citizen').where('phNo','==',phNo).get()
         var docID = ""
         var citizenDetails = null
         citizenArray.forEach((doc)=>{
