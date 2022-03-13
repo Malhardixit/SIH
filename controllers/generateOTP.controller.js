@@ -52,11 +52,12 @@ async function verifyOTP(req,res){
             to: `+91${phNo}`,
             code:`${req.query.code}`
         })
-        const citizenArray = await firebaseApp.firestore().collection('Citizen').where('phNo','==',phNo).get()
+        const citizenArray = await firebaseApp.firestore().collection('Citizen').where('PhNo','==',phNo).get()
         var docID = ""
         var citizenDetails = null
         citizenArray.forEach((doc)=>{
             docID = doc.id
+            console.log(doc.data())
         })
         OTPverification_status = OTPverification_response.status
         console.log(docID)
