@@ -35,6 +35,17 @@ async function cashTxnController(req,res){
         }
         res.status(200).send(response_t)
 }
+//Here operator verifies UniqueCashTxn Code and validates the txn from his end. After that happens
+//Users updates are finally fwded to the UIDAI 
+// Upcomimg Txn goes to Previous Txn
+async function OperatorCashTxnAmountView(req,res){
+    //required params, booking_id,uniqueCashTxnID,Operator_ID
+    const PendingTxnDetails = await firebaseApp.firestore().collection('Operator').doc(`${req.query.Operator_ID}Txns`).collection('PendingTxns').doc(`${req.query.booking_id}`).get()
+    const data = PendingTxnDetails.data()
+    res.status(200).send(data)
+}
+
 module.exports = {
-    cashTxnController
+    cashTxnController,
+    OperatorCashTxnAmountView
 }
