@@ -5,10 +5,10 @@ async function getPendingTxns(req,res){
     const pendingTxnsArray = []
     pendingTxns.forEach((doc)=>{
         pendingTxnsArray.push(doc.data())
+        console.log('Sent Pending txns')
     })
     res.status(200).send(pendingTxnsArray)
 }
-
 module.exports = {
     getPendingTxns
 }
