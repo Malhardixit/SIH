@@ -1,15 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Login = () => {
+  const [loginCredentials, setLoginCredentials] = useState({
+    username: "",
+    password: "",
+  });
+
+  function updateLoginCredentials(event) {
+    const { name, value } = event.target;
+    setLoginCredentials({
+      ...loginCredentials,
+      [name]: value,
+    });
+  }
+
+  function handleLogin(event) {
+    event.preventDefault();
+    if (loginCredentials) {
+      console.log(loginCredentials);
+      // Post request to perform login
+    } else {
+      alert("Username and password field can't be empty..!!!");
+    }
+  }
+
   return (
-    <LoginMaster>
+    <LoginFrom onSubmit={handleLogin}>
       <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
         Registrar Login
       </h1>
-      <InputField placeholder="Enter username" />
+      <InputField
+        name="username"
+        onChange={updateLoginCredentials}
+        placeholder="Enter username"
+        type="text"
+      />
       <br />
-      <InputField placeholder="Enter password" />
+      <InputField
+        name="password"
+        onChange={updateLoginCredentials}
+        placeholder="Enter password"
+        type="Password"
+      />
       <br />
       <div
         style={{
@@ -19,11 +52,11 @@ const Login = () => {
       >
         <Button>Login</Button>
       </div>
-    </LoginMaster>
+    </LoginFrom>
   );
 };
 
-const LoginMaster = styled.div`
+const LoginFrom = styled.form`
   border-radius: 4px;
   padding: 3% 5%;
   width: 75%;
