@@ -4,7 +4,7 @@ const {OperatorCashTxnAmountView} = require('../controllers/cashTxn.controller')
 const {getOperatorCredentials} = require('../controllers/operatorCredentials.controller')
 const operatorRouter = express.Router()
 
-
+//Operator Functions
 operatorRouter.post('/operatorCredentials',getOperatorCredentials)
 operatorRouter.get('/getPendingTxns',getPendingTxns)
 operatorRouter.get('/getCashTxnDetails',OperatorCashTxnAmountView)
