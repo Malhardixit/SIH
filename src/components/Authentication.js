@@ -25,7 +25,7 @@ export function Authentication({navigation}) {
     if (phonenumber.length === 10) {
       navigation.navigate('InputOTP');
       console.log('pressed');
-      //fetchOTP();
+      fetchOTP();
     }
   };
 

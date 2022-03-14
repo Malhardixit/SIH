@@ -19,7 +19,7 @@ const {height, width} = Dimensions.get('window');
 
 const HomeScreen = () => {
   function backActionHandler() {
-    Alert.alert('Are you sure you want to exit the app?', [
+    Alert.alert('', 'Are you sure you want to exit the app?', [
       {
         text: 'No',
         onPress: () => null,
@@ -27,9 +27,7 @@ const HomeScreen = () => {
       },
       {
         text: 'Yes',
-        onPress: () => {
-          BackHandler.exitApp();
-        },
+        onPress: () => BackHandler.exitApp(),
       },
     ]);
     return true;

@@ -12,7 +12,7 @@ import {useBackHandler} from '@react-native-community/hooks';
 const BookAppointment = ({navigation: {goBack}}) => {
   useBackHandler(
     useCallback(() => {
-      Alert.alert('Are you sure you want to exit the app?', [
+      Alert.alert('', 'Are you sure you want to exit the app?', [
         {
           text: 'No',
           onPress: () => null,

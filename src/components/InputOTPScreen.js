@@ -28,23 +28,23 @@ export function InputOTPScreen({navigation}) {
   });
 
   const verifyOtp = () => {
-    //fetch(`https://sihpaymentapis.herokuapp.com/verifyOTP?code=${internalVal}`);
-    navigation.navigate('rootHome');
-    // .then(res => res.json())
-    // .then(data => {
-    //   console.log(data);
-    //   if (data.Message == 'Verified') {
-    //     navigation.navigate('Home');
-    //     console.log('pressed');
-    //   } else {
-    //     Alert.alert('Invalid OTP');
-    //     navigation.navigate('Authentication');
-    //   }
-    // })
+    fetch(`https://sihpaymentapis.herokuapp.com/verifyOTP?code=${internalVal}`)
+      //navigation.navigate('rootHome');
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.Message == 'Verified') {
+          navigation.navigate('rootHome');
+          console.log('pressed');
+        } else {
+          Alert.alert('Invalid OTP');
+          navigation.navigate('Authentication');
+        }
+      })
 
-    // .catch(err => {
-    //   console.log(err);
-    // });
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   const decrementClock = () => {
