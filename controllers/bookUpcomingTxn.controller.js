@@ -20,7 +20,10 @@ async function updateUpcomingTxns(req,res){
             },
             OperatorID:req.body.OperatorID,
             Service:req.body.Service,
-            UniqueBookingID:uniqueBookingID
+            UniqueBookingID:uniqueBookingID,
+            isCashTxn:false,
+            CashComplaintID:"None",
+            CashTxnValue:"0"
         }
         const upcomingTxnsCollection = await firebaseApp.firestore().collection('Citizen').doc(`${req.query.uid}Txns`).collection('UpcomingTxns').doc(uniqueBookingID).set(data)
         console.log(upcomingTxnsCollection)
