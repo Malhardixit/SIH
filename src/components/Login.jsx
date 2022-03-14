@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Login = () => {
   return (
     <LoginMaster>
-      <h1 style={{ "text-align": "center", "margin-bottom": "30px" }}>
+      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
         Registrar Login
       </h1>
       <InputField placeholder="Enter username" />
@@ -24,11 +24,11 @@ const Login = () => {
 };
 
 const LoginMaster = styled.div`
-  border: 2px solid red;
   border-radius: 4px;
   padding: 3% 5%;
   width: 75%;
   margin: 0px auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 `;
 
 const InputField = styled.input`
