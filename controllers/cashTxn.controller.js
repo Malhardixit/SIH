@@ -15,7 +15,7 @@ async function cashTxnController(req,res){
             })
             const updateTxnDetailsOperator_1 = await firebaseApp.firestore().collection('Operator').doc(`${req.query.Operator_id}Txns`).collection('PendingTxns').doc(`${req.query.booking_id}`).update({
                 AmountToBePaid:response_t.AmountToBePaid,
-                CashTxnId:response_t.UniqueCode
+                CashTxnID:response_t.UniqueCode
             })
         }
         else{
@@ -30,7 +30,7 @@ async function cashTxnController(req,res){
             })
             const updateTxnDetailsOperator_1 = await firebaseApp.firestore().collection('Operator').doc(`${req.query.Operator_id}Txns`).collection('PendingTxns').doc(`${req.query.booking_id}`).update({
                 AmountToBePaid:response_t.AmountToBePaid,
-                CashTxnId:response_t.UniqueCode
+                CashTxnID:response_t.UniqueCode
             })
         }
         res.status(200).send(response_t)
