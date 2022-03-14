@@ -6,25 +6,27 @@ import {
   Alert,
   TouchableOpacity,
 } from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useCallback} from 'react';
+import {useBackHandler} from '@react-native-community/hooks';
 
-const BookAppointment = ({navigation}) => {
-  useEffect(() => {
-    const backAction = () => {
-      navigation.navigate('Home');
-      return true;
-    };
-
-    const backHandler = BackHandler.addEventListener(
-      'hardwareBackPress',
-      backAction,
-    );
-    return () => backHandler.remove();
-  }, []);
-
-  const toHistory = () => {
-    navigation.navigate('History');
-  };
+const BookAppointment = ({navigation: {goBack}}) => {
+  useBackHandler(
+    useCallback(() => {
+      Alert.alert('Are you sure you want to exit the app?', [
+        {
+          text: 'No',
+          onPress: () => null,
+          style: 'cancel',
+        },
+        {
+          text: 'Yes',
+          onPress: () => {
+            goBack();
+          },
+        },
+      ]);
+    }, [goBack]),
+  );
   return (
     <View>
       <Text>Hello</Text>
