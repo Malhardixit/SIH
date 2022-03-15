@@ -6,6 +6,7 @@ const {getNearestEnrolmentCentres} = require('../controllers/nearestEnrolmentLoc
 const {updateUpcomingTxns} = require('../controllers/bookUpcomingTxn.controller')
 const {generateOTP,verifyOTP} = require('../controllers/generateOTP.controller')
 const {cashTxnController} = require('../controllers/cashTxn.controller')
+const {digitalCheckout} = require('../controllers/citizenDigitalPayment.controller')
 
 const citizenRouter = express.Router()
 citizenRouter.get('',(req,res)=>{
@@ -23,6 +24,8 @@ citizenRouter.get('/protection',alertAuthorities)
 citizenRouter.post('/bookUpcomingTxn',updateUpcomingTxns)
 citizenRouter.get('/generateOTP',generateOTP)
 citizenRouter.get('/verifyOTP',verifyOTP)
+citizenRouter.get('/digitalPayment',digitalCheckout)
+
 module.exports = {
     citizenRouter
 }
