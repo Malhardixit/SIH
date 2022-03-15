@@ -22,6 +22,7 @@ async function getOperatorCredentials(req,res){
     }
     else if(data.Password === req.body.password){
         delete data.Password
+        data.Message = "User Authenticated"
         res.status(200).send(data)
     }
 }
