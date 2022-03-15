@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import OperatorCTACard from "./OperatorCTACard";
+import PendingAppointmentCard from "./PendingAppointmentCard";
 
-const Operator = () => {
+const PendingAppointments = () => {
   return (
-    <OperatorMaster>
+    <PendingAppointmentsMaster>
+      {/* RECHECK */}
       <OperatorNavbar>
         <Link to="/operator">
           <NavbarButton>Home</NavbarButton>
@@ -20,24 +21,18 @@ const Operator = () => {
           <NavbarButton>Make Payments</NavbarButton>
         </Link>
       </OperatorNavbar>
+      {/* RECHECK */}
 
-      <OperatorCTACard
-        heading="Check pending appointment status"
-        text="See how many customers are willing to update their aadhar"
-        buttonContent="View More"
-      />
-      <OperatorCTACard
-        heading="Scheduled bank transfers"
-        text="Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Phasellus neque."
-        buttonContent="View More"
-      />
-    </OperatorMaster>
+      <PendingAppointmentCardsDiv>
+        <PendingAppointmentCard />
+        <PendingAppointmentCard />
+        <PendingAppointmentCard />
+      </PendingAppointmentCardsDiv>
+    </PendingAppointmentsMaster>
   );
 };
 
-const OperatorMaster = styled.div``;
-
+const PendingAppointmentsMaster = styled.div``;
 export const OperatorNavbar = styled.div`
   width: 100%;
   padding: 10px 75px;
@@ -53,5 +48,10 @@ const NavbarButton = styled.a`
     color: #000000;
   }
 `;
+const PendingAppointmentCardsDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+`;
 
-export default Operator;
+export default PendingAppointments;

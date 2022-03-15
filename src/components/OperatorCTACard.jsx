@@ -26,7 +26,6 @@ const OperatorCTACardMaster = styled.div`
 `;
 const CardIconDiv = styled.div`
   width: 150px;
-  border: 2px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +36,6 @@ const CardIcon = styled.img`
 `;
 const CardTextDiv = styled.div`
   flex: 1;
-  border: 2px solid red;
   padding: 0 25px;
 `;
 const CardHeading = styled.h3``;
