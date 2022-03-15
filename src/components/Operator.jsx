@@ -25,12 +25,14 @@ const Operator = () => {
         heading="Check pending appointment status"
         text="See how many customers are willing to update their aadhar"
         buttonContent="View More"
+        link="/pendingAppointments"
       />
       <OperatorCTACard
         heading="Scheduled bank transfers"
         text="Lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Phasellus neque."
         buttonContent="View More"
+        link="/scheduledTransfers"
       />
     </OperatorMaster>
   );

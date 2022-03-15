@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import cardLogo from "../assets/img/cardImg1.png";
 
-const OperatorCTACard = ({ heading, text, buttonContent }) => {
+const OperatorCTACard = ({ heading, text, buttonContent, link }) => {
   return (
     <OperatorCTACardMaster>
       <CardIconDiv>
@@ -11,7 +12,9 @@ const OperatorCTACard = ({ heading, text, buttonContent }) => {
       <CardTextDiv>
         <CardHeading>{heading}</CardHeading>
         <CardText>{text}</CardText>
-        <CardCTAButton>{buttonContent}</CardCTAButton>
+        <Link to={link}>
+          <CardCTAButton>{buttonContent}</CardCTAButton>
+        </Link>
       </CardTextDiv>
     </OperatorCTACardMaster>
   );
@@ -52,6 +55,10 @@ const CardCTAButton = styled.button`
   outline: none;
   border-radius: 2px;
   margin-top: 15px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default OperatorCTACard;
