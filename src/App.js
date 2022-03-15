@@ -2,17 +2,24 @@ import "./App.css";
 import styled from "styled-components";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Operator from "./components/Operator";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Login />
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="operator" element={<Operator />} />
+        </Routes>
 
-      <Banner>
-        <span>&#169; Govt. Of India, New Delhi, India</span>
-      </Banner>
-    </div>
+        <Banner>
+          <span>&#169; Govt. Of India, New Delhi, India</span>
+        </Banner>
+      </div>
+    </Router>
   );
 }
 
@@ -22,7 +29,7 @@ const Banner = styled.div`
   padding: 10px 0;
   position: absolute;
   bottom: 0;
-  background-color: #ff5733;
+  background-color: #1976d2;
   color: #ffffff;
 `;
 

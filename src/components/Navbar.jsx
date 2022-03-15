@@ -13,11 +13,10 @@ const Navbar = () => {
 };
 
 const NavbarMaster = styled.div`
-  padding: 15px 35px;
+  padding: 5px 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
