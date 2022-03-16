@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import axios from "../axios";
 
-const Login = () => {
+const Login = ({ setOperator }) => {
   const [loginCredentials, setLoginCredentials] = useState({
     username: "",
     password: "",
@@ -17,18 +18,21 @@ const Login = () => {
   }
 
   function handleLogin(event) {
-    // event.preventDefault();
-    // if (loginCredentials.username !== "" && loginCredentials.password !== "") {
-    //   console.log(loginCredentials);
-    //   // Post request to perform login
-    // } else {
-    //   alert("Username and password field can't be empty..!!!");
-    // }
+    event.preventDefault();
+    if (loginCredentials.username !== "" && loginCredentials.password !== "") {
+      axios.post("/operatorCredentials", loginCredentials).then((res) => {
+        if (res.data.Message !== "User Authenticated") {
+          alert("Invalid Credentials");
+        }
+        setOperator(res.data);
+      });
+    } else {
+      alert("Username and password field can't be empty..!!!");
+    }
   }
 
   return (
-    // <LoginFrom onSubmit={handleLogin}>
-    <LoginFrom>
+    <LoginFrom onSubmit={handleLogin}>
       <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
         Registrar Login
       </h1>
@@ -52,9 +56,10 @@ const Login = () => {
           margin: "auto",
         }}
       >
-        <Link to="operator">
+        <Button>Login</Button>
+        {/* <Link to="operator">
           <Button>Login</Button>
-        </Link>
+        </Link> */}
       </div>
     </LoginFrom>
   );
