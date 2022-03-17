@@ -13,11 +13,8 @@ const Operator = () => {
         <Link to="/pendingAppointments">
           <NavbarButton>Pending appointments</NavbarButton>
         </Link>
-        <Link to="/scheduledTransfers">
-          <NavbarButton>Scheduled transfers</NavbarButton>
-        </Link>
         <Link to="/makePayments">
-          <NavbarButton>Make Payments</NavbarButton>
+          <NavbarButton>Cash Payments</NavbarButton>
         </Link>
       </OperatorNavbar>
 
@@ -28,11 +25,10 @@ const Operator = () => {
         link="/pendingAppointments"
       />
       <OperatorCTACard
-        heading="Scheduled bank transfers"
-        text="Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Phasellus neque."
+        heading="Cash Payments"
+        text="Accept payments in cash"
         buttonContent="View More"
-        link="/scheduledTransfers"
+        link="/makePayments"
       />
     </OperatorMaster>
   );

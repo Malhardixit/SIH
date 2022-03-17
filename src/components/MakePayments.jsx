@@ -13,9 +13,6 @@ const MakePayments = () => {
         <Link to="/pendingAppointments">
           <NavbarButton>Pending appointments</NavbarButton>
         </Link>
-        <Link to="/scheduledTransfers">
-          <NavbarButton>Scheduled transfers</NavbarButton>
-        </Link>
         <Link to="/makePayments">
           <NavbarButton>Make Payments</NavbarButton>
         </Link>
@@ -46,7 +43,7 @@ const MakePayments = () => {
         <ListItem>Online Payment</ListItem>
       </PaymentList>
       <PaymentList>
-        <ListItem>Manya Surve</ListItem>
+        <ListItem>Riddhiman Chindi Chor</ListItem>
         <ListItem>12001200</ListItem>
         <ListItem>
           <Accept>Accept</Accept>
@@ -55,13 +52,13 @@ const MakePayments = () => {
         <ListItem>Online Payment</ListItem>
       </PaymentList>
       <PaymentList>
-        <ListItem>Manya Surve</ListItem>
+        <ListItem>Buddhadeb</ListItem>
         <ListItem>12001200</ListItem>
         <ListItem>
           <Accept>Accept</Accept>
           <Decline>Decline</Decline>
         </ListItem>
-        <ListItem>Online Payment</ListItem>
+        <ListItem>Cash Payment</ListItem>
       </PaymentList>
     </MakePaymentsMasterDiv>
   );

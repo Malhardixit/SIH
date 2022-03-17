@@ -34,7 +34,7 @@ const Login = ({ setOperator }) => {
   return (
     <LoginFrom onSubmit={handleLogin}>
       <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
-        Registrar Login
+        Operator Login
       </h1>
       <InputField
         name="username"

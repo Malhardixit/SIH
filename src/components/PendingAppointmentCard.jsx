@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-const PendingAppointmentCard = () => {
+const PendingAppointmentCard = ({ data }) => {
+  console.log(data);
   return (
     <PendingAppointmentCardMaster>
       <CardTopDiv>
         <ProfileImg>A</ProfileImg>
-        <Name>Aman Gupta</Name>
+        <Name>{data.CustomerName}</Name>
       </CardTopDiv>
       <CardInfoDiv>
         <p>Appointment Date</p>
-        <Date>20/03/2022</Date>
+        <Date>{data.bookingDate}</Date>
       </CardInfoDiv>
       <ServicesOptedDiv>
-        <ServicesOpted>- Documents to be updated</ServicesOpted>
-        <ServicesOpted>- Biometric Updates</ServicesOpted>
+        <ServicesOpted>{"- " + data.Service}</ServicesOpted>
       </ServicesOptedDiv>
       <CardButton>Enabled</CardButton>
     </PendingAppointmentCardMaster>

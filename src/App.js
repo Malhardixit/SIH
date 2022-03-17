@@ -26,8 +26,9 @@ function App() {
           />
           <Route
             path="/pendingAppointments"
-            element={<PendingAppointments />}
+            element={<PendingAppointments user={operator} />}
           />
+          <Route path="/operator" element={<Operator />} />
           <Route path="/makePayments" element={<MakePayments />} />
         </Routes>
       </div>

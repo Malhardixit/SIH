@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PendingAppointmentCard from "./PendingAppointmentCard";
+import axios from "../axios";
 
-const PendingAppointments = () => {
+const PendingAppointments = ({ user }) => {
+  let route = "/getPendingTxns?operatorID=" + user.OperatorID;
+  const [pendingAppointments, setPendingAppointments] = useState([]);
+
+  useEffect(() => {
+    axios.get("getPendingTxns?operatorID=Operator_1").then((res) => {
+      // console.log(res.data);
+      setPendingAppointments(res.data);
+      // });
+    });
+  }, []);
+  // console.log(pendingAppointments);
+
   return (
     <PendingAppointmentsMaster>
       {/* RECHECK */}
@@ -14,9 +27,6 @@ const PendingAppointments = () => {
         <Link to="/pendingAppointments">
           <NavbarButton>Pending appointments</NavbarButton>
         </Link>
-        <Link to="/scheduledTransfers">
-          <NavbarButton>Scheduled transfers</NavbarButton>
-        </Link>
         <Link to="/makePayments">
           <NavbarButton>Make Payments</NavbarButton>
         </Link>
@@ -24,9 +34,9 @@ const PendingAppointments = () => {
       {/* RECHECK */}
 
       <PendingAppointmentCardsDiv>
-        <PendingAppointmentCard />
-        <PendingAppointmentCard />
-        <PendingAppointmentCard />
+        {pendingAppointments.map((data) => {
+          return <PendingAppointmentCard data={data} />;
+        })}
       </PendingAppointmentCardsDiv>
     </PendingAppointmentsMaster>
   );
