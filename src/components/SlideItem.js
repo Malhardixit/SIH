@@ -19,15 +19,15 @@ const styles = StyleSheet.create({
   cardView: {
     flex: 1,
     width: width - 20,
-    height: height / 3,
+    height: height / 5,
     backgroundColor: 'white',
     margin: 10,
-    borderRadius: 10,
+    borderRadius: 5,
     shadowColor: '#000',
     shadowOffset: {width: 0.5, height: 0.5},
     shadowOpacity: 0.5,
     shadowRadius: 3,
-    elevation: 5,
+    elevation: 4,
   },
   textView: {
     position: 'absolute',

@@ -1,32 +1,26 @@
 import React, {useEffect} from 'react';
-import {Button, View, Text, Alert, BackHandler} from 'react-native';
-
+import {View, Text, Alert, logoutlogout, Image, Linking} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {Button} from 'react-native-paper';
 import HomeScreen from './src/components/HomeScreen';
 import {InputOTPScreen} from './src/components/InputOTPScreen';
 import {Authentication} from './src/components/Authentication';
 import BookAppointment from './src/components/BookAppointment';
-import Profile from './src/components/Profile';
+import Fingerprint from './src/screens/Fingerprint';
 
 const Stack = createNativeStackNavigator();
-const Tabs = createBottomTabNavigator();
 
-const RootHome = () => {
-  function handleBackButton() {
-    BackHandler.exitApp();
-    return true;
-  }
+function LogoTitle() {
   return (
-    <Tabs.Navigator
-      backBehaviour="history"
-      screenOptions={{headerShown: false}}>
-      <Tabs.Screen name="Home" component={HomeScreen} />
-      <Tabs.Screen name="Appointment" component={BookAppointment} />
-    </Tabs.Navigator>
+    <Image
+      style={{width: 150, height: 50}}
+      source={require('./src/assets/consts/AEPS.jpeg')}
+    />
   );
-};
+}
 
 function App() {
   return (
@@ -38,9 +32,23 @@ function App() {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="rootHome"
-          component={RootHome}
-          options={{title: 'Home', headerShown: false}}
+          name="Home"
+          component={HomeScreen}
+          options={({navigation}) => ({
+            headerTitle: props => <LogoTitle {...props} />,
+            headerBackVisible: false,
+            headerRight: () => (
+              <Button
+                icon="logout"
+                onPress={() => {
+                  Alert.alert('Are you sure you want to logout?');
+                  navigation.navigate('Authentication');
+                }}
+                labelStyle={{fontSize: 30}}
+                color="black"
+              />
+            ),
+          })}
         />
         <Stack.Screen
           name="InputOTP"
@@ -50,6 +58,11 @@ function App() {
         <Stack.Screen
           name="Book"
           component={BookAppointment}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Finger"
+          component={Fingerprint}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

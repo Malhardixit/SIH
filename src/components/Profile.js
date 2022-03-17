@@ -1,5 +1,5 @@
 import {FlatList, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ProfileItem from './ProfileItem';
 
 const Profile = ({data}) => {
@@ -9,9 +9,6 @@ const Profile = ({data}) => {
         data={data}
         keyExtractor={(item, index) => 'key' + index}
         horizontal
-        pagingEnabled
-        scrollEnabled
-        snapToAlignment="center"
         renderItem={({item}) => {
           return <ProfileItem item={item} />;
         }}
@@ -21,5 +18,3 @@ const Profile = ({data}) => {
 };
 
 export default Profile;
-
-const styles = StyleSheet.create({});
