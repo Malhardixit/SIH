@@ -1,5 +1,6 @@
 import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 import React from 'react';
+import LinearGradient from 'react-native-linear-gradient';
 
 const {width, height} = Dimensions.get('window');
 
@@ -7,10 +8,6 @@ const SlideItem = ({item}) => {
   return (
     <View style={styles.cardView}>
       <Image style={styles.image} source={{uri: item.url}} />
-      <View style={styles.textView}>
-        <Text style={styles.itemTitle}>{item.title}</Text>
-        <Text style={styles.itemDesc}>{item.description}</Text>
-      </View>
     </View>
   );
 };

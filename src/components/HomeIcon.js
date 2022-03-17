@@ -8,6 +8,8 @@ import {
   ImageBackground,
 } from 'react-native';
 import {Button, TouchableRipple} from 'react-native-paper';
+
+// import MaterialCommunityIcons from ' react-native-vector-icons';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -21,13 +23,33 @@ const HomeIcon = ({navigation}) => {
         style={styles.img}>
         <View style={styles.iconBtn}>
           <Button
+            icon="calendar-month"
+            labelStyle={{fontSize: 50, marginLeft: 5}}
+            color="white"
+            style={styles.icon}></Button>
+
+          <Button
             onPress={() => {
               navigation.navigate('Finger');
             }}
+            icon="calendar-month"
+            labelStyle={{fontSize: 50, marginLeft: 5}}
+            color="white"
             style={styles.icon}></Button>
-          <Button style={styles.icon}></Button>
-          <Button style={styles.icon}></Button>
-          <Button style={styles.icon}></Button>
+
+          <Button
+            icon="calendar-month"
+            labelStyle={{fontSize: 50, marginLeft: 5}}
+            color="white"
+            style={styles.icon}></Button>
+          <Button
+            onPress={() => {
+              navigation.navigate('');
+            }}
+            icon="calendar-month"
+            labelStyle={{fontSize: 50, marginLeft: 5}}
+            color="white"
+            style={styles.icon}></Button>
         </View>
       </LinearGradient>
     </View>
@@ -46,7 +68,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 66,
     width: 66,
-    borderRadius: 50,
+    borderRadius: 80,
+    shadowColor: '#133465',
     backgroundColor: '#244DB7',
     elevation: 5,
   },

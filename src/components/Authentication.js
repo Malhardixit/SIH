@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  textContinue: {color: '#ffffff', alignItems: 'center'},
+  textContinue: {color: '#ffffff', alignItems: 'center', marginTop: 5},
   img: {
     height: 50,
     width: 30,

@@ -19,8 +19,9 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import PaymentScreen from './PaymentScreen';
 
-const Fingerprint = () => {
+const FingerPrint = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const [isAuth, setIsAuth] = useState(false);
 
@@ -69,10 +70,10 @@ const Fingerprint = () => {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View>
-        <Text>Welcome to Payment System</Text>
+        <PaymentScreen />
       </View>
     </SafeAreaView>
   );
 };
 
-export default Fingerprint;
+export default FingerPrint;

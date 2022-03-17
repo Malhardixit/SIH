@@ -45,9 +45,70 @@ const HomeScreen = ({navigation}) => {
       }}>
       <SlideShow data={dummyData} />
       <HomeIcon navigation={navigation} />
+      <View style={styles.textProp}>
+        <Text
+          style={{
+            textAlign: 'center',
+            width: 94,
+            height: 42,
+            left: 5,
+            top: 5,
+            color: 'white',
+            fontFamily: 'Poppins',
+            fontSize: 14,
+          }}>
+          Book Appointment
+        </Text>
+        <Text
+          style={{
+            textAlign: 'center',
+            width: 94,
+            height: 42,
+            left: 10,
+            top: 5,
+            color: 'white',
+            fontFamily: 'Poppins',
+            fontSize: 14,
+          }}>
+          Make Payment
+        </Text>
+        <Text
+          style={{
+            textAlign: 'center',
+            width: 94,
+            height: 42,
+            left: 20,
+            top: 5,
+            color: 'white',
+            fontFamily: 'Poppins',
+            fontSize: 14,
+          }}>
+          Upcoming Appointment
+        </Text>
+        <Text
+          style={{
+            textAlign: 'center',
+            width: 94,
+            height: 42,
+            left: 20,
+            top: 5,
+            color: 'white',
+            fontFamily: 'Poppins',
+            fontSize: 14,
+          }}>
+          Transaction History
+        </Text>
+      </View>
       <Profile data={dummyDataName} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  textProp: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+});
 
 export default HomeScreen;
