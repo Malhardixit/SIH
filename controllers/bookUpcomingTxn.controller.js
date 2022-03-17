@@ -31,7 +31,7 @@ async function updateUpcomingTxns(req,res){
             BookingID:uniqueBookingID,
             bookingDate:req.body.DateOfAppointment
         })
-        res.status(200).send({Upcoming:'Did Something'})
+        res.status(200).send({Upcoming:'Uploaded'})
     }
 }
 
