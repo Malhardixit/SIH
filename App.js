@@ -10,6 +10,7 @@ import {InputOTPScreen} from './src/components/InputOTPScreen';
 import {Authentication} from './src/components/Authentication';
 import BookAppointment from './src/components/BookAppointment';
 import Fingerprint from './src/screens/Fingerprint';
+import PaymentScreen from './src/screens/PaymentScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +65,11 @@ function App() {
           name="Finger"
           component={Fingerprint}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Pay"
+          component={PaymentScreen}
+          options={{title: 'Payment', headerTintColor: 'blue'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
